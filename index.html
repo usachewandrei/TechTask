@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+</head>
+<body>
+
+    <div class="elem">  
+    </div>
+
+    <div class="members">
+        <select name="members" id="members">
+            <option >All members</option>
+        </select>
+        <div class="btn">
+            <button >New Event</button>
+            <!-- <div class="modal">
+                <input required placeholder="Name of the event" name="name" type="text" class="modal__input">
+                <input required placeholder="Partisipants" name="name" type="text" class="modal__input">
+
+            </div> -->
+        </div>
+    </div>
+    <div class="modal">
+
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <form action="#">
+                    <div data-close class="modal__close">&times;</div>
+                    <div class="modal__title">Creating new event</div>
+                    <input required placeholder="Name of the event" name="kik" type="text" class="modal__input">
+                    <select  name="members" id="modal_members">
+                        <option >All members</option>
+                    </select>
+                    <select class="hours" name="members" id="modal_hour">
+                    </select>
+                    <select  class="day" name="members" id="modal_day">
+                    </select>
+                    <button id="create_event">Create</button>
+                </form>
+            </div>
+            
+        </div>
+        
+    </div>
+        
+    <script src="main.js"></script>
+    
+</body>
+</html>
