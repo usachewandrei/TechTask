@@ -19,6 +19,7 @@ let members = [
 
 const selectFilter = document.getElementById('members')
 
+let btnDel = document.createElement('button')
 
 let render = () => {
     // console.log(events);
@@ -26,7 +27,6 @@ let render = () => {
     let elem = document.querySelector('.elem')
     elem.innerHTML = '';
     let table = document.createElement('table')
-
     let tr = document.createElement('tr')
     data.forEach(element => {
         td = document.createElement('td')
@@ -48,32 +48,28 @@ let render = () => {
                 if (selectFilter.value !== 'All members' && selectFilter.value !== ev.member) {
                     td.innerHTML = '';
                 } else {
+                    td.classList.add('table-success')
 
                     td.innerHTML = ev.name;
-                    let btn = document.createElement('button')
-                    btn.classList.add('button-delete')
-                    btn.innerHTML = `&times`
-                    td.append(btn)
-                    btn.addEventListener('click', () => {
+                    btnDel.classList.add('button-delete')
+                    btnDel.innerHTML = `&times`
+                    td.append(btnDel)
+                    btnDel.addEventListener('click', () => {
                         if (events.has(hours[index] + data[a])) {
                             events.delete(hours[index] + data[a])
                             render()
                         };
                     })
                 }
-
-
             } else {
                 td.innerHTML = '';
             }
             tr.appendChild(td)
-
         }
 
         table.appendChild(tr)
     }
     elem.appendChild(table)
-
 }
 function select(id, data) {
     let select = document.getElementById(id)
@@ -90,7 +86,6 @@ select('modal_members', members)
 
 let modal = document.querySelector('.modal')
 let modalCloseBtn = document.querySelector('[data-close]')
-
 let btn = document.querySelector('.btn').addEventListener('click', (e) => {
     modal.style.display = 'block'
 })
@@ -116,9 +111,6 @@ document.getElementById('create_event').addEventListener('click', e => {
     closeModal()
 })
 
-
-
 selectFilter.addEventListener('change', () => render())
-
 render()
 
